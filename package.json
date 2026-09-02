@@ -1,0 +1,41 @@
+{
+  "name": "playlure-test-framework",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Playwright + BDD (Cucumber/Gherkin) + POM test automation framework - UI (Wikipedia) and API (JSONPlaceholder), feeding results into Playlure.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "bddgen && playwright test",
+    "test:ui": "bddgen && playwright test --project=ui",
+    "test:api": "bddgen && playwright test --project=api",
+    "test:performance": "bddgen && playwright test --project=performance",
+    "test:smoke": "bddgen && playwright test --grep @smoke",
+    "test:headed": "bddgen && playwright test --project=ui --headed",
+    "bddgen": "bddgen",
+    "report:allure": "allure generate reports/allure-results --clean -o reports/allure-report && allure open reports/allure-report",
+    "publish:playlure": "tsx scripts/publish-to-playlure.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint ."
+  },
+  "dependencies": {},
+  "overrides": {
+    "playwright-core": "1.60.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.10.2",
+    "@eslint/js": "9.13.0",
+    "@playwright/test": "1.60.0",
+    "@types/node": "22.10.1",
+    "allure-commandline": "2.32.0",
+    "allure-playwright": "3.1.0",
+    "dotenv": "16.4.5",
+    "eslint": "9.13.0",
+    "playwright-bdd": "8.5.1",
+    "tsx": "4.19.1",
+    "typescript": "5.6.2",
+    "typescript-eslint": "8.13.0",
+    "web-vitals": "^4.2.4"
+  }
+}

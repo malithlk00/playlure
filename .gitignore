@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+
+# Env (keep .env.example tracked, ignore real/local envs)
+.env.local
+.env.*.local
+.env
+
+# Build output
+dist/
+*.tsbuildinfo
+
+# Playwright / Cucumber generated
+.features-gen/
+playwright-report/
+test-results/
+blob-report/
+
+# Allure
+reports/allure-results/
+reports/allure-report/
+
+# Dashboard (generated per run — source files under dashboard/ stay tracked)
+dashboard/data.json
+dashboard/allure-report/
+
+# Logs
+reports/logs/
+npm-debug.log*
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
